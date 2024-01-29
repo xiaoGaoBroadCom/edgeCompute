@@ -8,6 +8,9 @@ spec:
   profile: |
     {
       "esx": {
+        "welcome_message": {
+          "message": \"{align:left}{color:white} \\n\\n\\n\\n\\t XiaoVMware\\n\\n\\t4 X Intel(R) Xeon(R) Gold 5120 CPU @ 2.20GHz\\n\\n\\t{memory} Memory\\n\\n\\n\\n\\tVendor: VMware, Inc.\\n\\n\\t
+          }
         "system": {
           "system_time": {
             "enabled": true,
