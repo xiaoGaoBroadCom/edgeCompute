@@ -1,4 +1,21 @@
 apiVersion: vmoperator.vmware.com/v1alpha1
+kind: VirtualMachineClass
+metadata:
+  name: best-effort-ec2-small
+  # No resource requests/reservations.
+  # Memory overcommit possible.
+spec:
+  # VM operator controller name for VirtualMachine class
+  # is different so addition of controllerName attr with invalid
+  # value makes vm operator ignore this VM CRD instance.
+  # This is majorly done because vm operator doesn't have all the
+  # needed capabilities to deploy keswick worker vm.
+  controllerName: vmoperator.vmware.com/keswickworker
+  hardware:
+    cpus: 4
+    memory: 8Gi
+---
+apiVersion: vmoperator.vmware.com/v1alpha1
 kind: VirtualMachine
 metadata:
   name: xiaobad-vce
@@ -6,7 +23,7 @@ metadata:
   annotations:
     vmoperator.vmware.com/image-supported-check: disable
 spec:
-  className: best-effort-ec-small
+  className: best-effort-ec2-small
   imageName: packages.vmware.com/photon/4.0/GA/ova/photon-hw11-4.0-1526e30ba0.ova
   powerState: poweredOn
   networkInterfaces:
