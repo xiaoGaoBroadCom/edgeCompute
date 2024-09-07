@@ -32,6 +32,10 @@ spec:
   networkInterfaces:
   - networkName: "VMNetwork3"
     ethernetCardType: "vmxnet3"
+  - networkName: "VMNetwork4"
+    ethernetCardType: "vmxnet3"
+  - networkName: "bogus"
+    ethernetCardType: "vmxnet3"
   vmMetadata:
     transport: CloudInit
     configMapName: worker-config
