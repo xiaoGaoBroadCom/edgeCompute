@@ -28,7 +28,7 @@ metadata:
 spec:
   className: best-effort-ec-small2
   imageName: ec-wrkr.ova
-  powerState: poweredOn
+  powerState: poweredOff
   networkInterfaces:
   - networkName: "VMNetwork3"
     ethernetCardType: "vmxnet3"
